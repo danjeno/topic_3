@@ -3,7 +3,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/dragAndDrop.js"></script>
     <title>HTML workshop</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>The form method="post" attribute</h1>
@@ -13,6 +15,10 @@
       <input type="text" id="fname" name="fname" /><br /><br />
       <label for="lname">Last name:</label>
       <input type="text" id="lname" name="lname" /><br /><br />
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" /><br /><br />
+      <label for="favcolor">Favorite color:</label>
+      <input type="text" id="favcolor" name="favcolor" /><br /><br />
       <input type="submit" value="Submit" />
     </form>
 
@@ -20,5 +26,48 @@
       Click on the submit button, and the form will be submittied using the POST
       method.
     </p>
+
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/4EoAHdwGBvU"
+      title="Minions | Laughing Hysterically"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+
+    <p>Click the button below to get your coordinates.</p>
+
+    <button onclick="getLocation()">GET MY COORDINATES</button>
+
+    <p id="demo"></p>
+
+    <script>
+      var x = document.getElementById("demo");
+
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.watchPosition(showPosition);
+        } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+
+      function showPosition(position) {
+        x.innerHTML =
+          "Latitude: " +
+          position.coords.latitude +
+          "<br>Longitude: " +
+          position.coords.longitude;
+      }
+    </script>
+
+    <div class="container">
+      Drag & Drop test
+      <div draggable="true" class="box">A</div>
+      <div draggable="true" class="box">B</div>
+      <div draggable="true" class="box">C</div>
+    </div>
   </body>
 </html>

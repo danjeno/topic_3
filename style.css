@@ -1,0 +1,27 @@
+body {
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 1em;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.box {
+  border: 3px solid black;
+  background-color: rgb(144, 191, 230);
+  border-radius: 0.5em;
+  padding: 10px;
+  cursor: move;
+  width: 50%;
+}
+
+.box.over {
+  border: 3px dotted coral;
+}
+
+[draggable] {
+  user-select: none;
+}
