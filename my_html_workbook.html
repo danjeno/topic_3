@@ -8,8 +8,25 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>The form method="post" attribute</h1>
+    <a href="some_page">This is a regular link</a>
 
+    <form method="post" action="some_page" class="inline">
+      <input
+        type="hidden"
+        name="extra_submit_param"
+        value="extra_submit_value"
+      />
+      <button
+        type="submit"
+        name="submit_param"
+        value="submit_value"
+        class="link-button"
+      >
+        This is a link that sends a POST request
+      </button>
+    </form>
+    <hr />
+    <h1>The form method="post" attribute</h1>
     <form action="/action_page.php" method="post" target="_blank">
       <label for="fname">First name:</label>
       <input type="text" id="fname" name="fname" /><br /><br />
@@ -26,7 +43,7 @@
       Click on the submit button, and the form will be submittied using the POST
       method.
     </p>
-
+    <hr />
     <iframe
       width="560"
       height="315"
@@ -36,7 +53,7 @@
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
     ></iframe>
-
+    <hr />
     <p>Click the button below to get your coordinates.</p>
 
     <button onclick="getLocation()">GET MY COORDINATES</button>
@@ -62,7 +79,7 @@
           position.coords.longitude;
       }
     </script>
-
+    <hr />
     <div class="container">
       Drag & Drop test
       <div draggable="true" class="box">A</div>

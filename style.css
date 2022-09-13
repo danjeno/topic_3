@@ -3,6 +3,35 @@ body {
   margin: 1em;
 }
 
+hr {
+  display: block;
+  height: 1px;
+  border: 5;
+  border-top: 1px solid rgb(0, 0, 0);
+  margin: 1em 0;
+  padding: 0;
+}
+
+.inline {
+  display: inline;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: serif;
+}
+.link-button:focus {
+  outline: none;
+}
+.link-button:active {
+  color: red;
+}
+
 .container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
